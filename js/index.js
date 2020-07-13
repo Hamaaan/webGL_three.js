@@ -63,8 +63,8 @@ sphere.position.set(0, 2, 0);
 
  // Load GLTF or GLB
  const loader = new THREE.GLTFLoader();
- const url = 'gltfs/saru.gltf';
-
+ //const url = 'gltfs/saru.gltf';
+ const url = 'gltfs/newBalance.glb';
  
  let model = null;
  loader.load(
@@ -72,7 +72,7 @@ sphere.position.set(0, 2, 0);
      function (gltf) {
          model = gltf.scene;
          // model.name = "model_with_cloth";
-         model.scale.set(1.0, 1.0, 1.0);
+         model.scale.set(0.3, 0.3, 0.3);
          model.position.set(0, 1, 0);
 
          scene.add(gltf.scene);
