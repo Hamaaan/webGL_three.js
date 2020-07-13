@@ -74,7 +74,7 @@ sphere.position.set(0, 2, 0);
  );
    
 
-
+/*
 // コントローラーの生成
 controls = new THREE.FirstPersonControls(camera, renderer.domElement);
 controls.lookSpeed = 1;
@@ -82,18 +82,18 @@ controls.movementSpeed = 3;
 controls.noFly = false;
 controls.lookVertical = true;
 controls.constrainVertical = false;
+*/
 
 
-/*
 // OrbitControls の追加
 const controls = new THREE.OrbitControls( camera, renderer.domElement );
-controls.userPan = false;
+controls.userPan = true;
 controls.userPanSpeed = 0.0;
 controls.maxDistance = 5000.0;
-controls.maxPolarAngle = Math.PI * 0.495;
+controls.maxPolarAngle = Math.PI * 1;//0.495;
 controls.autoRotate = false;
 controls.autoRotateSpeed = 1.0;
-*/
+
 
 // レンダリング
 const render = () => {
