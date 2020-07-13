@@ -6,8 +6,12 @@ var delta = 0;
 // オーディオ関連
 var shotAudio = new Audio("./audio/ShotAudio.mp3");
 var StruckAudio = new Audio("./audio/StruckAudio.mp3");
-var audio = new Audio("./audio/main_bgm.mp3");
+
+
 */
+
+
+
 
 // 幅、高さ取得
 const width  = 960;//window.innerWidth;
@@ -29,10 +33,18 @@ const scene  = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(110, width / height, 0.01, 10000 );
 camera.position.set(0, 1, 5);
 const light  = new THREE.AmbientLight(0x3a3a3a, 1);
-
 scene.add(camera);
 
 scene.add(light);
+
+// オーディオ、BGMの設定
+var baseVol = 1;
+var audio = new Audio("bgm/dadawsdadadwadadadawdadawda.wav");
+audio.loop = true;
+audio.volume = baseVol;
+
+
+
 
 // メッシュの作成と追加
 const grid   = new THREE.GridHelper(15, 20);
@@ -104,7 +116,54 @@ const render = () => {
   renderer.render(scene, camera);
 
   requestAnimationFrame(render);
-
 };
+
+window.addEventListener("keydown", handleKeydown);
+
+// イベントを登録
+//表示オブジェクト.addEventListener("click", handleClick);
+// クリックしたとき
+
+
+// mousedown
+function onMouseDown(event){
+  event.preventDefault();
+  
+}
+
+addEventListener("click", handleClick);
+function handleClick(event) {
+  // クリックされた時の処理を記述
+  //alert("クリックされました。");
+
+  audio.play();
+}
+
+this.onMouseDown = function ( event ) {
+  event.preventDefault();
+  event.stopPropagation();
+ 
+};
+
+function handleKeydown(event){
+  // キーコード(どのキーが押されたか)を取得
+  var keyCode = event.keyCode;
+  // 条件文で制御する
+  if (keyCode == 39) {
+    // 右
+  }
+  if (keyCode == 37) {
+    // 左    
+  }
+
+  if (keyCode == 38) {
+    // 上
+    audio.volume = 0;
+  }
+  if (keyCode == 40) {
+    // 下
+    audio.play();
+  }
+}
 
 render();
