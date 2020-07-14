@@ -72,7 +72,7 @@ sphere.position.set(0, 2, 0);
      function (gltf) {
          model = gltf.scene;
          // model.name = "model_with_cloth";
-         model.scale.set(0.3, 0.3, 0.3);
+         model.scale.set(0.1, 0.1, 0.1);
          model.position.set(0, 1, 0);
 
          scene.add(gltf.scene);
@@ -139,11 +139,6 @@ function handleClick(event) {
   audio.play();
 }
 
-this.onMouseDown = function ( event ) {
-  event.preventDefault();
-  event.stopPropagation();
- 
-};
 
 function handleKeydown(event){
   // キーコード(どのキーが押されたか)を取得
