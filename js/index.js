@@ -26,13 +26,13 @@ renderer.gammaOutput = true;
 
 document.body.appendChild(renderer.domElement);
 
-renderer.shadowMapEnabled = true;
+//renderer.shadowMapEnabled = true;
 
 // シーンの作成、カメラの作成と追加、ライトの作成と追加
 const scene  = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(110, width / height, 0.01, 10000 );
 camera.position.set(0, 1, 5);
-const light  = new THREE.AmbientLight(0x3a3a3a, 1);
+const light  = new THREE.AmbientLight(0xffffff, 1);
 scene.add(camera);
 
 scene.add(light);
@@ -63,8 +63,8 @@ sphere.position.set(0, 2, 0);
 
  // Load GLTF or GLB
  const loader = new THREE.GLTFLoader();
- //const url = 'gltfs/saru.gltf';
- const url = 'gltfs/newBalance.glb';
+ const url = 'gltfs/saru.gltf';
+ //const url = 'gltfs/human.gltf';
  
  let model = null;
  loader.load(
@@ -72,8 +72,8 @@ sphere.position.set(0, 2, 0);
      function (gltf) {
          model = gltf.scene;
          // model.name = "model_with_cloth";
-         model.scale.set(0.1, 0.1, 0.1);
-         model.position.set(0, 1, 0);
+         model.scale.set(1, 1, 1);
+         model.position.set(0, 0, 0);
 
          scene.add(gltf.scene);
 
